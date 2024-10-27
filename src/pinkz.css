@@ -29,7 +29,7 @@ html {
   min-height: 100%;
   background: light-dark(#fdfdfe, #090a0b);
   color: light-dark(#1e293b, #fdfdfe);
-  border-left: 8px solid  light-dark(#020617, #fdfdfe);
+  border-left: 8px solid  light-dark(#020617, #131618);
   border-top: 12px solid #f43f5e;
   border-right: 9px solid #f43f5e;
 }

@@ -22,7 +22,7 @@ clean() {
 
 deploy() {
   if [ -d $DIST ]; then
-    $DEPLOY $DIST/ $REMOTE:domains/$DOMAIN/public_html
+    $DEPLOY --exclude images $DIST/ $REMOTE:domains/$DOMAIN/public_html
   else
     err "'$DIST' does not exist."
   fi
