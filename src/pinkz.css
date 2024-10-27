@@ -26,10 +26,10 @@ html {
   font-family: var(--font-sans);
   font-size: 1.2rem;
   line-height: 1.5;
-  background: #FDFDFE;
-  color: #1e293b;
   min-height: 100%;
-  border-left: 8px solid  #020617;
+  background: light-dark(#fdfdfe, #090a0b);
+  color: light-dark(#1e293b, #fdfdfe);
+  border-left: 8px solid  light-dark(#020617, #fdfdfe);
   border-top: 12px solid #f43f5e;
   border-right: 9px solid #f43f5e;
 }
