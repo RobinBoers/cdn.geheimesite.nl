@@ -1,0 +1,29 @@
+#!/bin/bash
+
+SRC=src
+DIST=dist
+
+REMOTE=s11
+DOMAIN=cdn.geheimesite.nl
+
+build() {
+  [ -d $DIST/fonts ] || mkdir -p $DIST/fonts
+  rsync -ciau --delete $SRC/fonts $DIST/
+  postcss $SRC/ghme/main.css -o $DIST/ghme.css
+  postcss $SRC/typography.css -o $DIST/typography.css
+  postcss $SRC/reset.css -o $DIST/reset.css
+  postcss $SRC/punkt.css -o $DIST/punkt.css
+  postcss $SRC/pinkz.css -o $DIST/pinkz.css
+}
+
+clean() {
+  rm -rf $DIST
+}
+
+deploy() {
+  if [ -d $DIST ]; then
+    $DEPLOY $DIST/ $REMOTE:domains/$DOMAIN/public_html
+  else
+    err "'$DIST' does not exist."
+  fi
+}

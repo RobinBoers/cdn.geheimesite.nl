@@ -1,0 +1,271 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  /* Don't shift page content when sidebar appears */
+  margin-left: calc(100vw - 100%);
+  margin-right: 0;
+
+  font-size: clamp(1rem, 3vw, 1.256rem);
+  line-height: 33px;
+
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  line-height: 1.57142857em;
+  font-family: var(--font-content);
+}
+
+::selection {
+  background-color: rgba(var(--foreground), 0.4);
+  color: rgb(var(--background));
+}
+
+main {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.section,
+section,
+article > p,
+article > h1,
+article > h2,
+article > h3,
+article > h4,
+article > h5,
+article > h6,
+article > blockquote,
+article > ul,
+article > ol,
+article > form,
+article > .footnotes,
+li ul,
+li ol {
+  max-width: var(--max-text-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  color: currentColor;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: rgb(var(--primary));
+}
+a:hover {
+  background-color: rgb(var(--primary));
+  color: rgb(var(--foreground));
+}
+
+img {
+  user-select: none;
+  max-width: 100%;
+}
+
+figure,
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+}
+figure img {
+  width: 100%;
+}
+
+figcaption,
+.supplement,
+table caption {
+  filter: brightness(1.25);
+  text-align: center;
+  font-style: italic;
+  font-size: 0.875em;
+  line-height: 1.25em;
+}
+@media (prefers-color-scheme: dark) {
+  figcaption,
+  .supplement,
+  table caption {
+      filter: brightness(0.75);
+  }
+}
+figcaption a,
+.supplement a table caption a {
+  filter: brightness(0.75);
+}
+
+table caption {
+  margin-bottom: 4px;
+}
+
+table {
+  max-width: 100%;
+  width: 100%;
+  border-collapse: collapse;
+}
+table th,
+table td {
+  padding: 0.5em;
+}
+table,
+table td,
+table th {
+  border: 1px solid rgba(var(--foreground), 0.7);
+}
+
+blockquote {
+  padding-left: 40px;
+  opacity: 0.7;
+  font-style: italic;
+  font-size: 0.875em;
+  line-height: 1.55em;
+  border-left: 2px solid rgba(var(--foreground), 0.2);
+}
+
+hr {
+  border-width: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid rbga(188, 197, 208, 0.7);
+}
+@media (prefers-color-scheme: dark) {
+  hr {
+      border-top: 1px solid rgba(188, 197, 208, 0.2);
+  }
+}
+
+pre code,
+code pre,
+.highlight pre {
+  display: block;
+  font-family: var(--font-code);
+  padding: 12px;
+  width: 100%;
+  overflow: auto;
+  overflow-wrap: break-word;
+  line-height: initial;
+  border-radius: 5px;
+  background: rgb(var(--foreground));
+  color: rgb(var(--background));
+}
+
+code,
+code::before,
+code::after {
+  font-family: var(--font-code);
+  font-weight: bold;
+}
+
+code::before,
+code::after {
+  content: "`";
+}
+
+pre code {
+  font-weight: normal;
+}
+
+pre code::before,
+pre code::after {
+  display: none;
+}
+
+kbd {
+  border: 1px solid gray;
+  background: white;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-family: var(--font-sans);
+  color: #111121;
+}
+
+h1,
+.h1 {
+  font-size: 2em;
+  line-height: 1.57142857em;
+  margin-top: 0.78571429em;
+  margin-bottom: 0.78571429em;
+  font-family: var(--font-headings);
+}
+h2,
+.h2 {
+  font-size: 1.57142857em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: var(--font-subheadings);
+}
+h3,
+.h3 {
+  font-size: 1.23809524em;
+  line-height: 2.53846154em;
+  margin-top: 1.26923077em;
+  margin-bottom: 0;
+}
+h4,
+.h4 {
+  font-size: 1em;
+  line-height: 1.57142857em;
+  margin-top: 1.57142857em;
+  margin-bottom: 0;
+}
+h5,
+.h5 {
+  font-size: 1em;
+  line-height: 1.57142857em;
+  margin-top: 1.57142857em;
+  margin-bottom: 0;
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote,
+form,
+iframe,
+figure {
+  margin-top: 0;
+  margin-bottom: 1.57142857em;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0;
+}
+
+hr,
+.hr {
+  margin: -1px 0;
+}
+a,
+b,
+i,
+strong,
+em,
+small,
+code {
+  line-height: 0;
+}
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}

@@ -1,0 +1,63 @@
+.label,
+label {
+    font-size: 0.875em;
+    line-height: 1.25em;
+    opacity: 0.8;
+}
+
+.input,
+input,
+textarea,
+select,
+button {
+    padding: 0.5em;
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
+    border: 2px solid rgb(var(--primary));
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    display: block;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 0.875em;
+    line-height: 1.25em;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+@media (prefers-color-scheme: dark) {
+    .input,
+    input,
+    textarea,
+    select {
+        background-color: transparent;
+    }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    display: initial;
+    width: initial;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    cursor: pointer;
+    background: rgb(var(--primary));
+    color: rgb(var(--foreground));
+}
+.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    filter: brightness(0.9);
+}
+
+/* Make borders for invalid inputs red */
+form input:invalid:not(:placeholder-shown) {
+    border-color: orangered;
+}
